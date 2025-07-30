@@ -10,7 +10,7 @@ namespace CheckChikenRecord
         static string rootDirectory = string.Empty;
         static ConcurrentBag<string[]> groupResults = new ConcurrentBag<string[]>();
         static string[] searchStrings = new[] { "@", "#", "▲", "治験" };
-        static string[] excludeStrings = new[] { "NEUTRO#", "LYMPH#", "MONO#", "EO#", "BA#", "未登録薬外用" };
+        static string[] excludeStrings = new[] { "NEUTRO#", "LYMPH#", "MONO#", "EO#", "BA#", "FOLFOX#", "未登録薬外用" };
 
         [STAThread]
         static async Task Main(string[] args)
