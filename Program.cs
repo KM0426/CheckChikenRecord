@@ -67,33 +67,6 @@ namespace CheckChikenRecord
                 }
             }
 
-            // var files = Directory.GetFiles(rootDirectory, "*.csv", SearchOption.AllDirectories);
-            // if (files.Length == 0)
-            // {
-            //     Console.WriteLine("CSVファイルが見つかりませんでした。");
-            //     return;
-            // }
-
-            // foreach (var file in files)
-            // {
-            //     // file(フルパス)からファイル名を取得
-            //     var fileName = Path.GetFileName(file);
-            //     Console.WriteLine($"{fileName}を処理中...");
-            //     ProcessFile(file);
-            //     Console.WriteLine($"{fileName}の処理が完了しました。");
-            // }
-            // await Task.Run(() =>
-            // {
-            //     Parallel.ForEach(files, file =>
-            //     {
-            //         // file(フルパス)からファイル名を取得
-            //         var fileName = Path.GetFileName(file);
-            //         Console.WriteLine($"{fileName}を処理中...");
-            //         ProcessFile(file);
-            //         Console.WriteLine($"{fileName}の処理が完了しました。");
-            //     });
-            // });
-
             Console.WriteLine("全処理が完了しました。");
 
             // 結果をCSV出力
@@ -117,9 +90,7 @@ namespace CheckChikenRecord
                     // 何行目を処理しているか出力
                     if (n % 10000 == 0)
                     {
-                        // 出力はコンソールの同じ行をクリアして更新
                         Console.WriteLine($"{n}行目を処理中...");
-
                     }
                     if (searchStrings.AsParallel().Any(s => line.Contains(s)) &&
                         !excludeStrings.AsParallel().Any(e => line.Contains(e)))
